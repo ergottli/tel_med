@@ -1,0 +1,68 @@
+<<<<<<< HEAD
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DigitalMed</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+			<div id="page-wrapper">
+					<header id="header" class="alt">
+						<h1><a href="{{ url_for('index') }}">DigitalMed</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Меню</span></a>
+									<div id="menu">
+										<ul>
+                                            {% if current_user.is_anonymous %}
+                                            <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+                                            {% else %}
+            <li><a href="{{ url_for('user', username=current_user.username) }}">Профиль</a></li>
+            <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+                                            {% endif %}
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+                            <h1>Ошибка - 500</h1>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Proryvateli </li><li>Цифровой прорыв</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>
+=======
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>An unexpected error has occurred</h1>
+    <p>The administrator has been notified. Sorry for the inconvenience!</p>
+    <p><a href="{{ url_for('index') }}">Back</a></p>
+{% endblock %}
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66

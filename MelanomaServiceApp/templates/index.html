@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Телемед - Анализ новообразований кожи</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+					<header id="header">
+						<div class="content">
+							<div class="inner">
+								<h1>DigitalMed</h1>
+								<p>Самостоятельно проводите регулярную проверку наличия злокачественных заболеваний кожи</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#intro">Анализ</a></li>
+								<li><a href="#work">Информация</a></li>
+								<li><a href="#about">Методика</a></li>
+								<li><a href="https://digitalmed.eu.ngrok.io">Назад</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+							<article id="intro">
+								<h2 class="major">Анализ</h2>
+								<span class="image main"><img src="images/pic01.png" alt="" /></span>
+								<p>Сфотографируйте кожное образование камерой телефона в соотвествии с <a href="#about">инструкцией</a></p>
+								<form action="/upload" id="upload-file" method="post" enctype="multipart/form-data">
+									<h5>Загрузите фото:</h5>
+									<div class="custom-file">
+										<input type="file" class="custom-file-input" name="file" id="customFile">
+										<label class="custom-file-label" for="customFile">Выбрать файл</label>
+									</div>
+							
+									<div>
+										<input type="submit" class="btn btn-success" id="btn-predict" value="Анализ" />
+									</div>
+								</form>
+							
+								<h5>Или</h5>
+								<p>Вставьте ссылку на изображение:</p>
+								<form action="/classify-url" id="submit-url" method="post">
+									<div class="fields">
+									<div class="field">
+										<input type="url" class="form-control" name="url" id="url-input" placeholder="Enter image URL">
+									</div>
+								</div>
+								</br>
+									<div>
+										<input type="submit" class="btn btn-success" value="Анализ">
+									</div>
+								</form>
+							</article>
+
+							<article id="work">
+								<h2 class="major">Информация</h2>
+								<h5>Почему это важно?</h5>
+								<p>
+									<p></p>Рак кожи является самой распространенной разновидностью рака в мире
+									
+									<p></p>У 1 из 5 человек к 70 годам обнаруживают рак кожи  
+									
+									<p></p>Наличие 5+ солнечных ожогов удваивает риск заболевания раком кожи
+									
+									<p></p>Около 40% заболевших меланомой не удается спасти из-за позднего выявления, в то время как при ранней диагностике заболевание излечимо в 90 % случаев
+									
+									<p></p>Эксперты по раку кожи и меланоме рекомендуют ежемесячно осматривать себя с ног до головы, чтобы вовремя обнаружить признаки злокачественных заболеваний</p>
+							</article>
+
+							<article id="about">
+								<h2 class="major">Методика</h2>
+								<p><p></p>Фотографируете кожное образование камерой телефона в соотвествии с инструкцией
+
+								<p></p>Система искуственного интеллекта на основе нейросетей глубокого обучения анализирует данные
+									
+								<p></p>По результатам анализа сервис выдает рекомендацию о дальнейших действиях
+									
+								<p></p>При наличии рекомендаций связываетесь с одним из наших специалистов-дерматологов</p>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Prorivatels. Цифровой прорыв</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/browser.min.js"></script>
+			<script src="/static/assets/js/breakpoints.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+			<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+			<script src="/static/js/main.js"></script>
+	</body>
+</html>
