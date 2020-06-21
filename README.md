@@ -30,3 +30,4 @@ Postfix mail server
 
 http://5f74ba905840.ngrok.io/
 
+Анализ меланом (отдельным сервисом) - https://digitalmedskin.eu.ngrok.io/
