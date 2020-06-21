@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DigitalMed</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+			<div id="page-wrapper">
+					<header id="header" class="alt">
+						<h1><a href="{{ url_for('index') }}">DigitalMed</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Меню</span></a>
+									<div id="menu">
+										<ul>
+                                            {% if current_user.is_anonymous %}
+                                            <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+                                            {% else %}
+            <li><a href="{{ url_for('user', username=current_user.username) }}">Профиль</a></li>
+            <li><a href="{{ url_for('index') }}">Домой</a></li>
+            <li><a href="https://digitalmedskin.eu.ngrok.io">Анализ кожи</a></li>
+            <li><a href="#"><small>COVID - Осведомление (В разработке)</small></a></li>
+            <li><a href="#"><small>Стоматологический анализ (В разработке)</small></a></li>
+            <li><a href="#"><small>Дерматологический анализ (В разработке)</small></a></li>
+            <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+                                            {% endif %}
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+					<section id="banner">
+						<div class="inner">
+							<h2>DigitalMed</h2>
+							<p>{{ current_user.username }}</p>
+						</div>
+						<a href="#one" class="more scrolly">Подробнее</a>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style1 special">
+						<div class="inner">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                <ul>
+                                    {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            {% endwith %}
+                            <header class="major">
+								<h2>Добрый день, {{ current_user.username }}</h2>
+								<p>DigitalMed объединяет в себе сервисы на базе нейронных сетей,<br />
+								технологий универсального принятия и телемедицины.</p>
+							</header>
+							<ul class="icons major">
+								<li><span class="icon fa-gem major style1"><span class="label">Простота</span></span></li>
+								<li><span class="icon fa-heart major style2"><span class="label">Универсальность</span></span></li>
+								<li><span class="icon solid fa-code major style3"><span class="label">Обратная связь</span></span></li>
+							</ul>
+						</div>
+                    </section>
+                    
+                    <section id="two" class="wrapper alt style2">
+						<section class="spotlight">
+							<div class="image">
+                                <a href="https://digitalmedskin.eu.ngrok.io"><img src="static/images/pic01.png" alt="" /></a></div><div class="content">
+								<h2>ИИ-анализ кожи и родинок<br />
+								на предмет злокачественных новообразований</h2>
+								<p>Cамостоятельно с помощью камеры смартфона проводите регулярную проверку наличия злокачественных заболеваний кожи.</p>
+							</div>
+                        </section>
+                        <section class="spotlight">
+							<div class="image"><img src="static/images/pic02.png" alt="" /></div><div class="content">
+								<h2>COVID19 - Осведомление</h2>
+								<p>В данный момент сервис находится в разработке.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="static/images/pic03.png" alt="" /></div><div class="content">
+								<h2>Стоматологический анализ </br> (В разработке)</h2>
+								<p>При помощи камеры вашего смартфона проводите регулярный осмотр состояния ротовой полости.</p>
+							</div>
+						</section>
+						<section class="spotlight">
+							<div class="image"><img src="static/images/pic04.png" alt="" /></div><div class="content">
+								<h2>Дерматологический анализ </br> (В разработке)</h2>
+								<p>Странное покраснение или изменение кожных покровов? ИИ поможет определить тип заболевания, свяжет со специалистом и подскажет какие меры стоит принять</p>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>DigitalMed разработан с учетом технологий универсального принятия</h2>
+								<p>Это означает, что сервис поддерживает кирилличесские доменные имена и почты,<br />
+								что привносит дополнительное удобство при использовании пожилыми людьми.</p>
+							</header>
+							<ul class="features">
+								<li class="icon solid fa-laptop">
+									<h3>Не выходя из дома</h3>
+									<p>Не нужно стоять в огромных очередях. Следите за здоровьем в удобной обстановке за своим любимым устройством</p>
+								</li>
+								<li class="icon solid fa-paper-plane">
+									<h3>Поможем связаться со специалистом</h3>
+									<p>DigitalMed предназначен для выдачи рекомендации о необходимости и срочности похода к врачу, а также для оказания помощи в выборе специалиста.
+                                    И не используется в диагностических или лечебных целях, и не заменяет визит к врачу.</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Вы врач и хотите присоедениться к DigitalMed?</h2>
+								<p>Зарегистрируйтесь или войдите как специалист (Рекомендуем использовать отдельный почтовый сервис для запросов от пациентов (Почта.ру и др)).</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary">Регистрация</a></li>
+								<li><a href="#" class="button fit">Вход (Врач)</a></li>
+							</ul>
+						</div>
+                    </section>
+                    
+                    
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Proryvateli </li><li>Цифровой прорыв</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

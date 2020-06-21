@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DigitalMed</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="{{ url_for('index') }}">DigitalMed</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+                                            {% if current_user.is_anonymous %}
+                                            <li><a href="{{ url_for('register') }}">Регистрация</a></li>
+                                            {% else %}
+            <li><a href="{{ url_for('user', username=current_user.username) }}">Профиль</a></li>
+            <li><a href="{{ url_for('index') }}">Домой</a></li>
+            <li><a href="https://digitalmedskin.eu.ngrok.io">Анализ кожи</a></li>
+            <li><a href="#"><small>COVID - Осведомление (В разработке)</small></a></li>
+            <li><a href="#"><small>Стоматологический анализ (В разработке)</small></a></li>
+            <li><a href="#"><small>Дерматологический анализ (В разработке)</small></a></li>
+            <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+                                            {% endif %}
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+                    </header>
+                    
+<!-- Main -->
+<article id="main">
+    <section class="wrapper style5">
+        <div class="inner">
+            <section>
+                <h5>{{ user.username }}</h5>
+                <p><span class="image left"><img src="{{ user.avatar(128) }}" alt="" /></span>
+{% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+{% if user.last_seen %}<p>Заходил в последний раз: {{ user.last_seen }}</p>{% endif %}
+</p>
+
+            <section>
+                <h5>Исследования</h5>
+                {% for post in posts %}
+                {% include '_post.html' %}
+                {% endfor %}
+                {% if prev_url %}
+                <a href="{{ prev_url }}">Новые исследования</a>
+                {% endif %}
+                {% if next_url %}
+                <a href="{{ next_url }}">Старые исследования</a>
+                {% endif %}
+            </br>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Тип</th>
+                                <th>Результат</th>
+                                <th>Точность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="actions">
+                    <li><a href="{{ url_for('edit_profile') }}" class="button primary icon solid fa-edit">Изменить</a></li>
+                </ul>
+            </section>
+
+
+            
+
+        </div>
+    </section>
+</article>
+
+
+
+                    
+				<!-- Footer -->
+                <footer id="footer">
+                    <ul class="copyright">
+                        <li>&copy; Proryvateli </li><li>Цифровой прорыв</li>
+                    </ul>
+                </footer>
+
+        </div>
+
+    <!-- Scripts -->
+        <script src="../static/assets/js/jquery.min.js"></script>
+        <script src="../static/assets/js/jquery.scrollex.min.js"></script>
+        <script src="../static/assets/js/jquery.scrolly.min.js"></script>
+        <script src="../static/assets/js/browser.min.js"></script>
+        <script src="../static/assets/js/breakpoints.min.js"></script>
+        <script src="../static/assets/js/util.js"></script>
+        <script src="../static/assets/js/main.js"></script>
+
+</body>
+</html>
