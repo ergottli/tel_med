@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Результат - Анализ новообразований кожи</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/static/assets/css/main.css" />
+		<link rel="stylesheet" href="/static/css/main.css" />
+		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+					<header id="header">
+						<h4>Результат анализа: <b>{{result.get("class")}}</b></h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Тип образования</th>
+      <th scope="col">Точность (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for i in range(0, 7)%}
+    <tr>
+      <th scope="row">{{result.get("probs")[i][0]}}</th>
+      <td>{{result.get("probs")[i][1]}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+</body>
+<figure class="figure">
+  <img src="data:image/png;base64, {{result.get("image")}}" class="figure-img img-thumbnail input-image">
+</figure>
+<a class="button primary" href="https://digitalmedskin.eu.ngrok.io">Связаться с врачем</a>
+					</header>
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Prorivatels. Цифровой прорыв</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="/static/assets/js/jquery.min.js"></script>
+			<script src="/static/assets/js/browser.min.js"></script>
+			<script src="/static/assets/js/breakpoints.min.js"></script>
+			<script src="/static/assets/js/util.js"></script>
+			<script src="/static/assets/js/main.js"></script>
+			<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+			<script src="/static/js/main.js"></script>
+	</body>
+</html>
