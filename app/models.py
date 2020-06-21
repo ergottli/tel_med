@@ -56,6 +56,7 @@ class Research(UserMixin, db.Model):
     research_code = db.Column(db.Integer)
     result = db.Column(db.Float)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+<<<<<<< HEAD
 
 
 class SearchableMixin(object):
@@ -108,3 +109,5 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+=======
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66

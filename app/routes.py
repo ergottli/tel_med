@@ -67,7 +67,11 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
+<<<<<<< HEAD
         flash('Вы зарегистрированы!')
+=======
+        flash('Congratulations, you are now a registered user!')
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
@@ -81,7 +85,11 @@ def reset_password_request():
         user = User.query.filter_by(email=form.email.data).first()
         if user:
             send_password_reset_email(user)
+<<<<<<< HEAD
         flash('Проверьте свой почтовый ящик для изменения пароля')
+=======
+        flash('Check your email for the instructions to reset your password')
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
         return redirect(url_for('login'))
     return render_template('reset_password_request.html',
                            title='Reset Password', form=form)
@@ -133,7 +141,11 @@ def edit_profile():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
         db.session.commit()
+<<<<<<< HEAD
         flash('Изменения сохранены')
+=======
+        flash('Your changes have been saved.')
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
         return redirect(url_for('edit_profile'))
     elif request.method == 'GET':
         form.username.data = current_user.username

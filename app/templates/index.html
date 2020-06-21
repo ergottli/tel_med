@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -154,3 +155,23 @@
 
 	</body>
 </html>
+=======
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Привет, {{ current_user.username }}!</h1>
+    {% if form %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.post.label }}<br>
+            {{ form.post(cols=32, rows=4) }}<br>
+            {% for error in form.post.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% endif %}
+{% endblock %}
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66

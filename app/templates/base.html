@@ -10,7 +10,11 @@
         <div>
             Телемед:
             <a href="{{ url_for('index') }}">Домашняя страница</a>
+<<<<<<< HEAD
             <a href="https://digitalmedskin.eu.ngrok.io">Диагност</a>
+=======
+            <a href="{{ url_for('diagnost') }}">Диагност</a>
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
             {% if current_user.is_anonymous %}
             <a href="{{ url_for('login') }}">Войти</a>
             {% else %}

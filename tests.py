@@ -70,12 +70,23 @@ class UserModelCase(unittest.TestCase):
         db.session.add_all([p1, p2, p3, p4])
         db.session.commit()
 
+<<<<<<< HEAD
         u1.follow(u2)
         u1.follow(u4)
         u2.follow(u3)
         u3.follow(u4)
         db.session.commit()
 
+=======
+        # setup the followers
+        u1.follow(u2)  # john follows susan
+        u1.follow(u4)  # john follows david
+        u2.follow(u3)  # susan follows mary
+        u3.follow(u4)  # mary follows david
+        db.session.commit()
+
+        # check the followed posts of each user
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
         f1 = u1.followed_posts().all()
         f2 = u2.followed_posts().all()
         f3 = u3.followed_posts().all()

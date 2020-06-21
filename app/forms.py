@@ -65,5 +65,9 @@ class EmptyForm(FlaskForm):
 
 
 class PostForm(FlaskForm):
+<<<<<<< HEAD
     post = TextAreaField('Создать запрос', validators=[DataRequired()])
+=======
+    post = TextAreaField('Say something', validators=[DataRequired()])
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
     submit = SubmitField('Submit')

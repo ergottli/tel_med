@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -44,6 +45,12 @@
                             {% endwith %}
     <h1>Регистрация (С поддержкой русскоязычных почтовых доменов)</h1>
     <h7>Рекомендуем: Почта.ру, Почтовик.рф</h7>
+=======
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Регистрация</h1>
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -76,6 +83,7 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+<<<<<<< HEAD
 </div>
 </section>
 
@@ -99,3 +107,6 @@
 
 </body>
 </html>
+=======
+{% endblock %}
+>>>>>>> cfebcc893638e5eabc57ea920b01d2bd9a73ff66
